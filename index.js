@@ -7,7 +7,6 @@ function searchRepositories() {
     $.each(response.items, (index, item) => {
       console.log("index is " + index)
       console.log("item is " + item)
-      // debugger
       $("#results").append(`<ul><a href="${item.html_url}"><li> ${item.name} </li></a><br>`)
       $("#results").append("<li>Description: " + item.description + "</li><br>")
       $("#results").append("<li>Repo Owner Login: " + item.owner.login + "</li><br>")
@@ -32,8 +31,6 @@ function showCommits(el) {
         $("#details").append(`<p>message - ${item.commit.message}</p>`)
         $("#details").append(`<p>login - ${item.committer.login}</p>`)
         $("#details").append(`<p>avatar - <img src ='${item.committer.avatar_url}'></p>`)
-        debugger
-        // For each commit, list the SHA, the author, the author's login, and the author's avatar as an image.
       })
     })
 }
